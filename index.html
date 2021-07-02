@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鹅输入法 </title>
+    <link href="style.css" rel="stylesheet">
+ </head>
+<body>
+    <form id="form">
+        <label for="fav-animal-input" id="fav-animal-input-label">
+            小鹅输入法  
+        </label>
+        <br/>
+        <div class="penguin-container">
+            <div class="word-bubble"></div>
+            <div class="penguin">
+                <div class="penguin__tail"></div>
+                <div class="penguin__feet"></div>
+                <div class="penguin__body"></div>
+                <div class="penguin__head"></div>
+                <div class="penguin__wings">
+                    <div class="penguin__wing--left"></div>
+                    <div class="penguin__wing--right"></div>
+                </div>
+            </div>
+        </div>
+        <input type="text" id="fav-animal-input" class="textbox test-input-method" maxLength="20" placeholder="不超过20个字符" autocomplete="off"></input>
+        <div class="container ">
+            <!-- <input type="text" class="test-input-method" placeholder="请在这里打字试试"> -->
+            <div id="simle_input_method" class="simple-input-method" style="display: block; left: 8px; margin-top: 0.2rem;">
+           
+      
+            </div>
+        </div>
+        <!-- <button class="btn-submit">提交</button> -->
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+    <script src="./words.js"></script>
+    <script src="./pinying.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

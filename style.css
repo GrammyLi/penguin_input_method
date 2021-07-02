@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+:root {
+    --input-width: 300px;
+    --penguin-size: 50px;
+    --penguin-black: black;
+    --penguin-white: white;
+    --penguin-orange: #FF6F00;
+    --text-color: #000000;
+    --button-color-1: #C7EFCF;
+    --button-color-2: #78c087;
+    --button-active-color-1: #86ffed;
+    --button-active-color-2: #5ec0b1;
+    --background-color-1: #C7EFCF;
+    --background-color-2: #E3BAC6;
+    --input-color: #86ffed;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    background: linear-gradient(45deg, var(--background-color-1), var(--background-color-2));
+    color: var(--text-color);
+}
+
+body, button, .textbox {
+    font-family: 'Itim', cursive;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+button {
+    padding: 8px 10px;
+    margin: 20px;
+    border-radius: 4px;
+    border: none;
+    background: var(--button-color-1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: inset -3px -5px var(--button-color-2), inset 3px 1px var(--button-color-2);
+    color: var(--text-color);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(5px);
+}
+
+button:hover,
+button:focus {
+    --button-color-1: var(--button-active-color-1);
+    --button-color-2: var(--button-active-color-2);
+}
+
+.textbox {
+    --padding: 10px;
+    padding: var(--padding);
+    width: calc(var(--input-width) - (2 * var(--padding)));
+    resize: none;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    border: 2px solid var(--text-color);
+}
+
+.textbox:focus {
+    /* background: var(--input-color); */
+}
+
+.penguin-container {
+    width: var(--input-width);
+}
+
+.penguin {
+    width: var(--penguin-size);
+    height: var(--penguin-size);
+}
+
+.penguin * {
+    position: absolute;
+}
+
+.penguin__body {
+    width: 35px;
+    height: 37px;
+    background: var(--penguin-white);
+    box-shadow: inset 0px 6px 0px 5px var(--penguin-black);
+    border-radius: 50% 50% 35% 35%;
+    transform: translate(5px, 10px);
+}
+
+.penguin__wings * {
+    width: 22px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--penguin-black);
+}
+
+.penguin__wing--left {
+    transform: translate(-6px, 23px) rotate(-48deg);
+}
+
+.penguin__wing--right {
+    transform: translate(29px, 23px) rotate(48deg);
+}
+
+.penguin__feet {
+    width: 10px;
+    height: 10px;
+    background: var(--penguin-orange);
+    border-radius: 0% 0% 50% 50%;
+    box-shadow: 15px 0 var(--penguin-orange);
+    transform: translate(10px, 40px);
+}
+
+.penguin__tail {
+    width: 10px;
+    height: 10px;
+    background: var(--penguin-black);
+    border-radius: 2px;
+    transform: translate(3px, 33px) rotate(27deg);
+}
+
+.penguin__head {
+    width: 20px;
+    height: 15px;
+    background: var(--penguin-black);
+    border-radius: 50% 50% 0 0;
+    transform: translate(13px, 0px);
+}
+
+.penguin__head::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--penguin-white);
+    border-radius: 50%;
+    transform: translate(10px, 5px);
+}
+
+.penguin__head::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    background: var(--penguin-orange);
+    border-radius: 40% 50% 50% 40%;
+    transform: translate(18px, 5px);
+}
+
+.word-bubble {
+    --bubble-color: black;
+    --font-color: white;
+    transform: translateX(-10px);
+    width: max-content;
+    padding: 4px 8px;
+    background: var(--bubble-color);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    color: var(--font-color);
+    letter-spacing: 1px;
+}
+
+.word-bubble::before {
+    content: '';
+    background: linear-gradient(-45deg, var(--bubble-color) 0 50%,transparent 50% 100%);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    transform: translate(10px, 15px) rotate(45deg);
+}
+
+#fav-animal-input-label {
+    font-size: 2rem;
+    height: 8rem;
+    margin: 20px 20px 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.loading-tip {
+    color: #00960A;
+    margin-bottom: 10px;
+}
+
+.container {
+    
+    width: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.simple-input-method {
+    /* position: absolute; */
+    background: #FFF;
+    border: solid 1px #B5C5D2;
+    font-family: 'Arial';
+    color: #0364CD;
+    display: none;
+}
+
+.simple-input-method .pinyin {
+    border-bottom: solid 1px #B5C5D2;
+    padding: 4px 10px;
+    font-weight: bold;
+}
+
+.simple-input-method .result {
+    padding: 4px 10px 4px 0px;
+}
+
+.simple-input-method .result ol {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.simple-input-method .result ol:after {
+    content: '';
+    display: block;
+    clear: left;
+}
+
+.simple-input-method .result ol li {
+    float: left;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.simple-input-method .result ol li:first-child {
+    color: red;
+}
+
+.simple-input-method .page-up-down {
+    display: inline-block;
+    border: solid 1px #BADBFF;
+    font-size: 12px;
+    color: #4C9AEF;
+    border-radius: 1px;
+    margin-left: 10px;
+}
+
+.simple-input-method .page-up-down .page-down {
+    border-left: solid 1px #BADBFF;
+}
+
+.simple-input-method .page-up-down span {
+    cursor: pointer;
+}
+
+.simple-input-method .page-up-down span.disable {
+    opacity: .3;
+}
