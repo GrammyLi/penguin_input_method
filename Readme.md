@@ -1,6 +1,7 @@
 ## Penguin Input Method
 The author：Grammy Li
 
+![input method](/小鹅输入法.gif)
 
 Project preview:
 
